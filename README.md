@@ -10,9 +10,10 @@ La plataforma funcionará como una red social donde los usuarios podrán publica
 
 ## Equipo
 
-*
-*
-* 
+* Franco Pacheco
+* Gastón Ramirez
+* Aylén Chalco
+* Julián Fajardo
 * Melina Loza Flores
 * Santiago Agustin Dopazo
 
