@@ -1,0 +1,571 @@
+/* =========================================================
+   1. VARIABLES (paleta Color Combo No. 481)
+   ========================================================= */
+:root {
+  --color-mint: #DFF3E8;        /* fondos suaves */
+  --color-sage: #A4D3C9;        /* bordes, detalles */
+  --color-teal-light: #51A6A3;  /* hover, acentos */
+  --color-teal: #027578;        /* color principal */
+  --color-teal-dark: #025160;   /* títulos, footer */
+  --color-sky: #73BCC2;         /* detalles */
+  --color-white: #FFFFFF;
+  --color-bg: #F4FAF7;          /* fondo general (menta muy clarito) */
+  --color-text-soft: #4A7A82;   /* texto secundario */
+
+  --radius: 14px;
+  --radius-pill: 999px;
+  --shadow: 0 4px 14px rgba(2, 81, 96, 0.10);
+  --shadow-hover: 0 10px 24px rgba(2, 81, 96, 0.18);
+  --font-main: "Poppins", "Segoe UI", Roboto, Arial, sans-serif;
+}
+
+/* =========================================================
+   2. BASE
+   ========================================================= */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-main);
+  background-color: var(--color-bg);
+  color: var(--color-teal-dark);
+  line-height: 1.6;
+}
+
+.container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 1.25rem;
+}
+
+h1, h2, h3 {
+  color: var(--color-teal-dark);
+  line-height: 1.2;
+}
+
+a {
+  color: var(--color-teal);
+}
+
+.section {
+  padding: 4rem 0;
+}
+
+.section-title {
+  font-size: 1.9rem;
+  margin-bottom: 0.5rem;
+}
+
+.section-subtitle {
+  color: var(--color-text-soft);
+  margin-bottom: 2rem;
+}
+
+/* =========================================================
+   3. BOTONES
+   ========================================================= */
+.btn {
+  display: inline-block;
+  padding: 0.6rem 1.4rem;
+  border: 2px solid var(--color-teal);
+  border-radius: var(--radius-pill);
+  background-color: var(--color-teal);
+  color: var(--color-white);
+  font-family: inherit;
+  font-size: 0.95rem;
+  font-weight: 600;
+  cursor: pointer;
+  text-decoration: none;
+  transition: background-color 0.2s, color 0.2s, transform 0.2s;
+}
+
+.btn:hover {
+  background-color: var(--color-teal-dark);
+  border-color: var(--color-teal-dark);
+  transform: translateY(-1px);
+}
+
+.btn-outline {
+  background-color: transparent;
+  color: var(--color-teal);
+}
+
+.btn-outline:hover {
+  background-color: var(--color-teal);
+  border-color: var(--color-teal);
+  color: var(--color-white);
+}
+
+.btn-light {
+  background-color: var(--color-white);
+  border-color: var(--color-white);
+  color: var(--color-teal-dark);
+}
+
+.btn-light:hover {
+  background-color: var(--color-mint);
+  border-color: var(--color-mint);
+}
+
+.btn-ghost {
+  background-color: transparent;
+  border-color: var(--color-white);
+  color: var(--color-white);
+}
+
+.btn-ghost:hover {
+  background-color: var(--color-white);
+  color: var(--color-teal-dark);
+}
+
+.btn-lg {
+  padding: 0.8rem 1.8rem;
+  font-size: 1rem;
+}
+
+/* =========================================================
+   4. NAVBAR
+   ========================================================= */
+.navbar {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background-color: var(--color-white);
+  box-shadow: 0 2px 10px rgba(2, 81, 96, 0.08);
+}
+
+.navbar .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  padding-top: 0.9rem;
+  padding-bottom: 0.9rem;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: var(--color-teal);
+  font-size: 1.5rem;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.logo svg {
+  width: 34px;
+  height: 34px;
+  fill: var(--color-teal);
+}
+
+.nav-menu {
+  display: flex;
+  gap: 1.75rem;
+  list-style: none;
+}
+
+.nav-menu a {
+  color: var(--color-teal-dark);
+  font-weight: 600;
+  font-size: 0.95rem;
+  text-decoration: none;
+  padding-bottom: 4px;
+  border-bottom: 2px solid transparent;
+  transition: color 0.2s, border-color 0.2s;
+}
+
+.nav-menu a:hover {
+  color: var(--color-teal);
+  border-bottom-color: var(--color-teal);
+}
+
+.nav-actions {
+  display: flex;
+  gap: 0.6rem;
+}
+
+/* =========================================================
+   5. HERO
+   ========================================================= */
+.hero {
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(135deg, var(--color-teal-dark) 0%, var(--color-teal) 55%, var(--color-teal-light) 100%);
+  color: var(--color-white);
+  padding: 5rem 0;
+}
+
+/* círculos decorativos */
+.hero::before,
+.hero::after {
+  content: "";
+  position: absolute;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.07);
+}
+
+.hero::before {
+  width: 420px;
+  height: 420px;
+  top: -140px;
+  right: -100px;
+}
+
+.hero::after {
+  width: 260px;
+  height: 260px;
+  bottom: -110px;
+  left: 30%;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  gap: 3rem;
+  align-items: center;
+}
+
+.hero-tag {
+  display: inline-block;
+  background-color: rgba(255, 255, 255, 0.15);
+  padding: 0.3rem 1rem;
+  border-radius: var(--radius-pill);
+  font-size: 0.85rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+
+.hero h1 {
+  color: var(--color-white);
+  font-size: 2.8rem;
+  margin-bottom: 1rem;
+}
+
+.hero p {
+  font-size: 1.1rem;
+  opacity: 0.92;
+  margin-bottom: 2rem;
+}
+
+.hero-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+.hero-card {
+  background-color: var(--color-mint);
+  color: var(--color-teal-dark);
+  border-radius: var(--radius);
+  padding: 2rem;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.2);
+}
+
+.hero-card h3 {
+  margin-bottom: 1rem;
+  font-size: 1.15rem;
+}
+
+.check-list {
+  list-style: none;
+}
+
+.check-list li {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.5rem 0;
+  font-weight: 500;
+}
+
+.check-list li::before {
+  content: "✓";
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  background-color: var(--color-teal);
+  color: var(--color-white);
+  font-size: 0.85rem;
+  font-weight: 700;
+}
+
+/* =========================================================
+   6. CÓMO FUNCIONA
+   ========================================================= */
+.steps {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 1.5rem;
+}
+
+.step {
+  background-color: var(--color-white);
+  border-radius: var(--radius);
+  padding: 2rem 1.5rem;
+  text-align: center;
+  box-shadow: var(--shadow);
+}
+
+.step-icon {
+  width: 64px;
+  height: 64px;
+  margin: 0 auto 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background-color: var(--color-mint);
+  font-size: 1.8rem;
+}
+
+.step h3 {
+  margin-bottom: 0.5rem;
+  font-size: 1.1rem;
+}
+
+.step p {
+  color: var(--color-text-soft);
+  font-size: 0.95rem;
+}
+
+/* =========================================================
+   7. PUBLICACIONES (filtros + tarjetas)
+   ========================================================= */
+.publicaciones {
+  background-color: var(--color-mint);
+}
+
+.filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  background-color: var(--color-white);
+  padding: 1rem;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+}
+
+.filters input,
+.filters select {
+  padding: 0.7rem 1rem;
+  border: 2px solid var(--color-sage);
+  border-radius: var(--radius-pill);
+  background-color: var(--color-white);
+  font-family: inherit;
+  font-size: 0.95rem;
+  color: var(--color-teal-dark);
+}
+
+.filters input:focus,
+.filters select:focus {
+  outline: none;
+  border-color: var(--color-teal);
+}
+
+.filters input {
+  flex: 1;
+  min-width: 220px;
+}
+
+.results-count {
+  margin-top: 1.25rem;
+  color: var(--color-text-soft);
+  font-size: 0.9rem;
+}
+
+.pets-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 1.5rem;
+  margin-top: 1rem;
+}
+
+.pet-card {
+  background-color: var(--color-white);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  overflow: hidden;
+  transition: transform 0.25s, box-shadow 0.25s;
+}
+
+.pet-card:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-hover);
+}
+
+.pet-photo {
+  position: relative;
+  height: 180px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, var(--color-sage), var(--color-sky));
+  font-size: 4.5rem;
+}
+
+.pet-photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.pet-photo .badge {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+}
+
+.pet-info {
+  padding: 1.1rem 1.25rem 1.4rem;
+}
+
+.pet-info h3 {
+  font-size: 1.15rem;
+  margin-bottom: 0.2rem;
+}
+
+.pet-zona {
+  color: var(--color-teal);
+  font-size: 0.9rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+.pet-desc {
+  color: var(--color-text-soft);
+  font-size: 0.92rem;
+}
+
+.badge {
+  display: inline-block;
+  padding: 0.2rem 0.8rem;
+  border-radius: var(--radius-pill);
+  font-size: 0.78rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--color-white);
+}
+
+.badge-perdido {
+  background-color: var(--color-teal-dark);
+}
+
+.badge-encontrado {
+  background-color: var(--color-teal-light);
+}
+
+.empty-message {
+  grid-column: 1 / -1;
+  text-align: center;
+  padding: 2rem 0;
+  color: var(--color-text-soft);
+}
+
+/* =========================================================
+   8. FOOTER
+   ========================================================= */
+.footer {
+  background-color: var(--color-teal-dark);
+  color: var(--color-white);
+  padding: 2.5rem 0 1.5rem;
+}
+
+.footer-top {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 1.5rem;
+  padding-bottom: 1.5rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.footer .logo {
+  color: var(--color-white);
+}
+
+.footer .logo svg {
+  fill: var(--color-sky);
+}
+
+.footer-text {
+  max-width: 340px;
+  margin-top: 0.5rem;
+  font-size: 0.9rem;
+  opacity: 0.8;
+}
+
+.footer-links {
+  list-style: none;
+  display: flex;
+  gap: 1.5rem;
+}
+
+.footer-links a {
+  color: var(--color-white);
+  text-decoration: none;
+  opacity: 0.85;
+}
+
+.footer-links a:hover {
+  opacity: 1;
+  text-decoration: underline;
+}
+
+.footer-bottom {
+  padding-top: 1.25rem;
+  text-align: center;
+  font-size: 0.85rem;
+  opacity: 0.7;
+}
+
+/* =========================================================
+   9. RESPONSIVE
+   ========================================================= */
+@media (max-width: 860px) {
+  .nav-menu {
+    display: none;
+  }
+
+  .hero {
+    padding: 3rem 0;
+  }
+
+  .hero-content {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .hero h1 {
+    font-size: 2.1rem;
+  }
+
+  .section {
+    padding: 3rem 0;
+  }
+}
+
+@media (max-width: 520px) {
+  .logo {
+    font-size: 1.25rem;
+  }
+
+  .nav-actions .btn {
+    padding: 0.45rem 0.9rem;
+    font-size: 0.85rem;
+  }
+}

@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title> Mascotas perdidas y encontradas</title>
+
+  <!-- Tipografía (si no hay internet, usa la fuente de respaldo) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+  <!-- ============ NAVBAR ============ -->
+  <header class="navbar">
+    <div class="container">
+      <a href="index.html" class="logo">
+        <svg viewBox="0 0 64 64" aria-hidden="true">
+          <ellipse cx="11" cy="28" rx="6" ry="8" transform="rotate(-20 11 28)"/>
+          <ellipse cx="25" cy="14" rx="6.5" ry="9" transform="rotate(-8 25 14)"/>
+          <ellipse cx="40" cy="14" rx="6.5" ry="9" transform="rotate(8 40 14)"/>
+          <ellipse cx="54" cy="28" rx="6" ry="8" transform="rotate(20 54 28)"/>
+          <path d="M32 30c-9 0-17 9-17 17 0 6 5 9 10 9 3 0 5-1 7-1s4 1 7 1c5 0 10-3 10-9 0-8-8-17-17-17z"/>
+        </svg>
+        Mascotas Perdidas
+      </a>
+
+      <ul class="nav-menu">
+        <li><a href="#inicio">Inicio</a></li>
+        <li><a href="#como-funciona">Cómo funciona</a></li>
+        <li><a href="#publicaciones">Publicaciones</a></li>
+      </ul>
+
+      <div class="nav-actions">
+        <!-- Estas páginas se crean en los próximos pasos -->
+        <a href="#" class="btn btn-outline">Iniciar sesión</a>
+        <a href="#" class="btn">Registrarse</a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- ============ HERO ============ -->
+    <section class="hero" id="inicio">
+      <div class="container hero-content">
+        <div>
+          <span class="hero-tag">🐾 Mascotas perdidas y encontradas</span>
+          <h1>Ayudamos a las mascotas a volver a casa</h1>
+          <p>Una comunidad que se une para reencontrar a cada mascota perdida con su familia. Buscá en tu zona o publicá a tu compañero.</p>
+          <div class="hero-buttons">
+            <a href="#publicaciones" class="btn btn-light btn-lg">Ver publicaciones</a>
+            <a href="#" class="btn btn-ghost btn-lg">Publicar mascota</a>
+          </div>
+        </div>
+
+        <div class="hero-card">
+          <h3>¿Por qué usar Mascotas Perdidas?</h3>
+          <ul class="check-list">
+            <li>Publicá en pocos minutos</li>
+            <li>Buscá por zona, tipo y estado</li>
+            <li>Reconocimiento de mascotas con IA</li>
+            <li>Gratis y colaborativo</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ CÓMO FUNCIONA ============ -->
+    <section class="section" id="como-funciona">
+      <div class="container">
+        <h2 class="section-title">¿Cómo funciona?</h2>
+        <p class="section-subtitle">Tres pasos simples para reunir a una mascota con su familia.</p>
+
+        <div class="steps">
+          <div class="step">
+            <div class="step-icon">📝</div>
+            <h3>1. Publicá</h3>
+            <p>Registrate y subí fotos de la mascota que perdiste o encontraste.</p>
+          </div>
+          <div class="step">
+            <div class="step-icon">🔍</div>
+            <h3>2. Buscá</h3>
+            <p>Filtrá por zona, tipo de animal y estado para encontrar coincidencias.</p>
+          </div>
+          <div class="step">
+            <div class="step-icon">🏠</div>
+            <h3>3. Reencontrate</h3>
+            <p>Contactá a la otra persona y ayudá a que vuelva a casa.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ PUBLICACIONES ============ -->
+    <section class="section publicaciones" id="publicaciones">
+      <div class="container">
+        <h2 class="section-title">Publicaciones recientes</h2>
+        <p class="section-subtitle">Buscá entre las mascotas perdidas y encontradas.</p>
+
+        <div class="filters">
+          <input type="text" id="filtro-texto" placeholder="Buscar por nombre, zona o descripción...">
+          <select id="filtro-tipo">
+            <option value="">Perros y gatos</option>
+            <option value="perro">Perros</option>
+            <option value="gato">Gatos</option>
+          </select>
+          <select id="filtro-estado">
+            <option value="">Perdidos y encontrados</option>
+            <option value="perdido">Perdidos</option>
+            <option value="encontrado">Encontrados</option>
+          </select>
+        </div>
+
+        <p class="results-count" id="results-count"></p>
+        <div id="pets-grid" class="pets-grid"></div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ============ FOOTER ============ -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-top">
+        <div>
+          <a href="index.html" class="logo">
+            <svg viewBox="0 0 64 64" aria-hidden="true">
+              <ellipse cx="11" cy="28" rx="6" ry="8" transform="rotate(-20 11 28)"/>
+              <ellipse cx="25" cy="14" rx="6.5" ry="9" transform="rotate(-8 25 14)"/>
+              <ellipse cx="40" cy="14" rx="6.5" ry="9" transform="rotate(8 40 14)"/>
+              <ellipse cx="54" cy="28" rx="6" ry="8" transform="rotate(20 54 28)"/>
+              <path d="M32 30c-9 0-17 9-17 17 0 6 5 9 10 9 3 0 5-1 7-1s4 1 7 1c5 0 10-3 10-9 0-8-8-17-17-17z"/>
+            </svg>
+            Mascotas Perdidas
+          </a>
+          <p class="footer-text">Conectamos a personas que perdieron o encontraron mascotas para que vuelvan a su hogar.</p>
+        </div>
+        <ul class="footer-links">
+          <li><a href="#inicio">Inicio</a></li>
+          <li><a href="#como-funciona">Cómo funciona</a></li>
+          <li><a href="#publicaciones">Publicaciones</a></li>
+        </ul>
+      </div>
+    </div>
+  </footer>
+
+  <!-- El orden importa: primero los datos y la api, al final main.js -->
+  <script src="js/mockData.js"></script>
+  <script src="js/api.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
